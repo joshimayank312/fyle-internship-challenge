@@ -1,10 +1,15 @@
+// app.component.spec.ts
+
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module'; // Import AppModule
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent]
-  }));
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [AppModule], // Include AppModule in imports
+    }).compileComponents();
+  });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -22,6 +27,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('fyle-frontend-challenge app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain(
+      'fyle-frontend-challenge app is running!'
+    );
   });
 });

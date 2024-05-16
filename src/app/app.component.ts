@@ -1,3 +1,6 @@
+// app.component.ts
+
+// app.component.ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,6 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  title = 'fyle-frontend-challenge';
   githubUsername: string = '';
 
   onSearch(username: string) {
